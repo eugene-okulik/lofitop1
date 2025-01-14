@@ -13,3 +13,4 @@ my_dict['set'].discard(1)  # Удалить элемент из множеств
 print(my_dict)
 
 
+
