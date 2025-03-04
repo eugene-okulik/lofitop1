@@ -1,36 +1,29 @@
 class Flowers:
     kind = 'Plants'
 
-    def __init__(self, name, cost, freshness, size, life_time):
+    def __init__(self, name, cost, freshness, size, life_time, type, color):
         self.name = name
         self.cost = cost
         self.freshness = freshness
         self.size = size
         self.life_time = life_time
+        self.type = type
+        self.color = color
 
 
 class GardenFlowers(Flowers):
-    type = 'Garden'
-    color = 'Red'
-
     def __init__(self, name, cost, freshness, size, life_time):
-        super().__init__(name, cost, freshness, size, life_time)
+        super().__init__(name, cost, freshness, size, life_time, type = 'Garden', color = 'Red')
 
 
 class WildFlowers(Flowers):
-    type = 'Wild'
-    color = 'Yellow'
-
     def __init__(self, name, cost, freshness, size, life_time):
-        super().__init__(name, cost, freshness, size, life_time)
+        super().__init__(name, cost, freshness, size, life_time, type = 'Wild', color = 'Yellow')
 
 
 class ForestFlowers(Flowers):
-    type = 'Forest'
-    color = 'Green'
-
     def __init__(self, name, cost, freshness, size, life_time):
-        super().__init__(name, cost, freshness, size, life_time)
+        super().__init__(name, cost, freshness, size, life_time, type = 'Forest', color = 'Green')
 
 
 class BouquetFlowers:
@@ -45,10 +38,9 @@ class BouquetFlowers:
         print(sum(a) / len(self.list_flowers))
 
     def sort_size(self):
-        a = []
-        for flower in self.list_flowers:
-            a.append(flower.size)
-        print(sorted(a))
+        sorted_flowers = sorted(self.list_flowers, key=lambda flower: flower.size)
+        for flower in sorted_flowers:
+            print(f'{flower.name}: {flower.size}')
 
     def sort_freshness(self):
         a = []
@@ -71,15 +63,14 @@ class BouquetFlowers:
     def search_name(self):
         user_input = input('Enter a name:\n')
         found = False
-        i = 0
-        while i < len(self.list_flowers):
-            if user_input == self.list_flowers[i].name:
-                print(f'{user_input} in bouquet')
+        for flower in self.list_flowers:
+            if user_input == flower.name:
+                print(
+                    f'Found: {flower.name}, Size: {flower.size}, Freshness: {flower.freshness}, Cost: {flower.cost}, Color: {flower.color}')
                 found = True
                 break
-            i += 1
         if not found:
-            print(f'{user_input} no in bouquet')
+            print(f'{user_input} not found in bouquet')
 
 
 flower1 = GardenFlowers('Rose', 10, 10, 5, 10)
