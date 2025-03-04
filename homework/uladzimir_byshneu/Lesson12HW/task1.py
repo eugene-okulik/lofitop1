@@ -13,17 +13,17 @@ class Flowers:
 
 class GardenFlowers(Flowers):
     def __init__(self, name, cost, freshness, size, life_time):
-        super().__init__(name, cost, freshness, size, life_time, type = 'Garden', color = 'Red')
+        super().__init__(name, cost, freshness, size, life_time, type='Garden', color='Red')
 
 
 class WildFlowers(Flowers):
     def __init__(self, name, cost, freshness, size, life_time):
-        super().__init__(name, cost, freshness, size, life_time, type = 'Wild', color = 'Yellow')
+        super().__init__(name, cost, freshness, size, life_time, type='Wild', color='Yellow')
 
 
 class ForestFlowers(Flowers):
     def __init__(self, name, cost, freshness, size, life_time):
-        super().__init__(name, cost, freshness, size, life_time, type = 'Forest', color = 'Green')
+        super().__init__(name, cost, freshness, size, life_time, type='Forest', color='Green')
 
 
 class BouquetFlowers:
@@ -66,7 +66,8 @@ class BouquetFlowers:
         for flower in self.list_flowers:
             if user_input == flower.name:
                 print(
-                    f'Found: {flower.name}, Size: {flower.size}, Freshness: {flower.freshness}, Cost: {flower.cost}, Color: {flower.color}')
+                    f'Found: {flower.name}, Size: {flower.size}, Freshness: {flower.freshness}, '
+                    f'Cost: {flower.cost}, Color: {flower.color}')
                 found = True
                 break
         if not found:
