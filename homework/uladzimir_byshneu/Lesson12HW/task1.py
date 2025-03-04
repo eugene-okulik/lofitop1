@@ -35,30 +35,31 @@ class BouquetFlowers:
         a = []
         for flower in self.list_flowers:
             a.append(flower.life_time)
-        print(sum(a) / len(self.list_flowers))
+        print(f'Average wilting time: {sum(a) / len(self.list_flowers)}')
 
     def sort_size(self):
         sorted_flowers = sorted(self.list_flowers, key=lambda flower: flower.size)
+        print("Sorted by size:")
         for flower in sorted_flowers:
             print(f'{flower.name}: {flower.size}')
 
     def sort_freshness(self):
-        a = []
-        for flower in self.list_flowers:
-            a.append(flower.freshness)
-        print(sorted(a))
+        sorted_flowers = sorted(self.list_flowers, key=lambda flower: flower.freshness)
+        print("Sorted by freshness:")
+        for flower in sorted_flowers:
+            print(f'{flower.name}: {flower.freshness}')
 
     def sort_cost(self):
-        a = []
-        for flower in self.list_flowers:
-            a.append(flower.cost)
-        print(sorted(a))
+        sorted_flowers = sorted(self.list_flowers, key=lambda flower: flower.cost)
+        print("Sorted by cost:")
+        for flower in sorted_flowers:
+            print(f'{flower.name}: {flower.cost}')
 
     def sort_color(self):
-        a = []
-        for flower in self.list_flowers:
-            a.append(flower.color)
-        print(sorted(a))
+        sorted_flowers = sorted(self.list_flowers, key=lambda flower: flower.color)
+        print("Sorted by color:")
+        for flower in sorted_flowers:
+            print(f'{flower.name}: {flower.color}')
 
     def search_name(self):
         user_input = input('Enter a name:\n')
