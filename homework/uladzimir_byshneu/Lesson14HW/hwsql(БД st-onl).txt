@@ -1,0 +1,34 @@
+INSERT into students (name, second_name, group_id) values ('MIXI', 'ORACLE', 4876)
+
+INSERT INTO books (title, taken_by_student_id) values ('PELEVIN', 20016)
+INSERT INTO books (title, taken_by_student_id) values ('PELEVIN2', 20016)
+INSERT INTO books (title, taken_by_student_id) values ('PELEVIN3', 20016)
+
+INSERT into `groups` (title, start_date, end_date) values ('TOP GRUPPA', 'feb 2025', 'apr 2025')
+
+INSERT INTO subjets (title) values ('Вышмат')
+INSERT INTO subjets (title) values ('История экономики')
+INSERT INTO subjets (title) values ('Геология')
+
+INSERT into lessons (title,subject_id) values ('Геология Беларуси',10027)
+INSERT into lessons (title,subject_id) values ('Геология Европы',10027)
+INSERT into lessons (title,subject_id) values ('История экономики: древний мир',10026)
+INSERT into lessons (title,subject_id) values ('История экономики: средневековье',10026)
+
+INSERT into marks (value, lesson_id, student_id) values (10,9366,20016)
+INSERT into marks (value, lesson_id, student_id) values (10,9365,20016)
+INSERT into marks (value, lesson_id, student_id) values (9,9364,20016)
+INSERT into marks (value, lesson_id, student_id) values (8,9363,20016)
+
+SELECT value from marks WHERE student_id = 20016
+
+SELECT title from books WHERE taken_by_student_id = 20016
+
+SELECT *
+FROM students st
+LEFT JOIN `groups` g ON st.group_id = g.id
+LEFT JOIN books b ON b.taken_by_student_id = st.id
+LEFT JOIN marks m ON m.student_id = st.id
+LEFT JOIN lessons l ON m.lesson_id = l.id
+LEFT JOIN subjets s ON l.subject_id = s.id
+where st.id = 20016
