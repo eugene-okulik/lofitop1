@@ -1,10 +1,11 @@
-INSERT into students (name, second_name, group_id) values ('MIXI', 'ORACLE', 4876)
+INSERT into students (name, second_name) values ('MIXI', 'ORACLE')
 
 INSERT INTO books (title, taken_by_student_id) values ('PELEVIN', 20016)
 INSERT INTO books (title, taken_by_student_id) values ('PELEVIN2', 20016)
 INSERT INTO books (title, taken_by_student_id) values ('PELEVIN3', 20016)
 
 INSERT into `groups` (title, start_date, end_date) values ('TOP GRUPPA', 'feb 2025', 'apr 2025')
+UPDATE students set group_id = 4876 where id = 20016
 
 INSERT INTO subjets (title) values ('Вышмат')
 INSERT INTO subjets (title) values ('История экономики')
