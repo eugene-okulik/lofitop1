@@ -13,11 +13,11 @@ cursor.execute("INSERT INTO students (name, second_name) VALUES ('MIXI', 'ORACLE
 student_id = cursor.lastrowid
 add_books = "INSERT INTO books (title, taken_by_student_id) VALUES (%s, %s)"
 cursor.executemany(
-add_books, (
+add_books,(
         ('PELEVIN', student_id),
         ('PELEVIN2', student_id),
         ('PELEVIN3', student_id)
-    )
+          )
 )
 cursor.execute(
     "INSERT INTO `groups` (title, start_date, end_date) "
@@ -36,7 +36,8 @@ cursor.execute("INSERT INTO lessons (title, subject_id) VALUES ('Геологи�
 lesson2_id = cursor.lastrowid
 cursor.execute("INSERT INTO lessons (title, subject_id) VALUES ('История экономики: древний мир', %s)", (subject1_id,))
 lesson3_id = cursor.lastrowid
-cursor.execute("INSERT INTO lessons (title, subject_id) VALUES ('История экономики: средневековье', %s)", (subject2_id,))
+cursor.execute("INSERT INTO lessons (title, subject_id) VALUES ('История экономики: средневековье', %s)",
+               (subject2_id,))
 lesson4_id = cursor.lastrowid
 
 add_marks = "INSERT INTO marks (value, lesson_id, student_id) VALUES (%s, %s, %s)"
