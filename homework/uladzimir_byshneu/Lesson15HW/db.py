@@ -13,13 +13,13 @@ cursor.execute("INSERT INTO students (name, second_name) VALUES ('MIXI', 'ORACLE
 student_id = cursor.lastrowid
 add_books = "INSERT INTO books (title, taken_by_student_id) VALUES (%s, %s)"
 cursor.executemany(
-            add_books,
-            [
-                ('PELEVIN', student_id),
-                ('PELEVIN2', student_id),
-                ('PELEVIN3', student_id)
-            ]
-        )
+    add_books,
+    (
+        ('PELEVIN', student_id),
+        ('PELEVIN2', student_id),
+        ('PELEVIN3', student_id)
+    )
+)
 cursor.execute(
     "INSERT INTO `groups` (title, start_date, end_date) "
     "VALUES ('TOP GRUPPA', 'feb 2025', 'apr 2025')"
